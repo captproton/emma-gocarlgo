@@ -4,7 +4,9 @@ Rails.application.configure do
   config.hosts << /[a-z0-9]+\.ngrok\.io/
 
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: ENV["APP_PORT"] }
+config.action_mailer.default_url_options = { host: 'localhost', port: ENV["APP_PORT"] }
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
