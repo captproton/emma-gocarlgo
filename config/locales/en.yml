@@ -31,3 +31,6 @@
 
 en:
   hello: "Hello world"
+  notifications:
+    contact_form_notification:
+      message: "Hello world"

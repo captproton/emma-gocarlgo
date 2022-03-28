@@ -7,7 +7,7 @@ class ContactFormNotification < Noticed::Base
   # Add your delivery methods
   #
   deliver_by :database, format: :to_database
-  deliver_by :email, mailer: "UserMailer"
+  deliver_by :email, mailer: "ContactFormMailer"
   # deliver_by :slack
   # deliver_by :custom, class: "MyDeliveryMethod"
 
@@ -23,11 +23,11 @@ class ContactFormNotification < Noticed::Base
 
   # Define helper methods to make rendering easier.
   #
-  # def message
-  #   t(".message")
-  # end
-  #
-  # def url
-  #   post_path(params[:post])
-  # end
+  def message
+    t(".message")
+  end
+  
+  def url
+    root_path
+  end
 end
