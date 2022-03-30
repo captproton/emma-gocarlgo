@@ -1,0 +1,11 @@
+You've got a lead!
+
+  Here are the details:
+</p>
+
+  name:       <%= "#{@contact_message.first_name} #{@contact_message.last_name}" %>  
+  email:      <%= "#{@contact_message.email}" %> 
+  phone:      <%= "#{@contact_message.phone_number}" %> 
+  subject:    <%= "#{@contact_message.subject}" %>
+  message:    <%= "#{@contact_message.message}" %>
+  created at: <%= "#{@contact_message.created_at}" %>

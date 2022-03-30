@@ -3,13 +3,14 @@ class HomeController < ApplicationController
 
 
   def index
-    @site             = Site.first
+    @site                   = Site.first
     
-    @pinned_entries   = Blog::Entry.all_pinned
-    @coming_soon      = Meetup.coming_soon
-    @lead             = Lead.new
-    @home_info        = @site.home_info
-    @frontpage_icons  = PublisherAcct.frontpage_icons
+    @pinned_entries         = Blog::Entry.all_pinned
+    @coming_soon            = Meetup.coming_soon
+    @lead                   = Lead.new
+    @contact_message_form   = ContactMessage.new    
+    @home_info              = @site.home_info
+    @frontpage_icons        = PublisherAcct.frontpage_icons
   end
 
   def terms
