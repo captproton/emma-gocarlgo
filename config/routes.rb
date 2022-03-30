@@ -1,7 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  resources :contact_messages, only: [:create, :index]
+  resources :contact_messages, only: [:create, :index, :show]
   get 'contact_form_notifications/newcreate'
   namespace :backstage do
     get 'get_in_contact_content/edit'
