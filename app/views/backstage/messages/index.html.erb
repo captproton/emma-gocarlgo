@@ -9,21 +9,8 @@
     <p>This is the future place of where to reply to incoming messages
         from external platforms like 'contact us,' and newsletters.
     </p>
-    <%# @messages.each do |message| %>
-      <%# <div class="item"> %>
-        <%# <p> %>
-          title: <%#= link_to message.title, edit_backstage_message_path(message) %>
-        <%# </p> %>
-        <%# <p>Size: = message.device_size </p>             %>
-        <%# <p> %>
-          <%# if message.image.attached? %>
-            <%#= image_tag message.image %>
-          <%# else %>
-            <%# image  %>
-          <%# end %>
-        <%# </p> %>
-    <%# </div> %>
-    <%# end %>
+
+    <%= render @notifications %>
           
 
   </section>

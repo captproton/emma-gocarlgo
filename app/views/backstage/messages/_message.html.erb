@@ -1,0 +1,15 @@
+<div class="p-4">
+    <p>
+        title: <%#= link_to message.title, edit_backstage_message_path(message) %>
+        
+    </p>
+    <p>
+        <% contact = message.params.length > 0 ?  message.params.fetch(:contact).values.join(", ") : "contact missing" %>
+        <% if contact !=  "contact missing" %>
+        <%= contact %>
+        <% else %>
+        <em>contact missing</em>
+        <% end %>
+
+</div>
+

@@ -42,6 +42,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # accelerate development of email messages
+  gem "letter_opener", "~> 1.8"
 end
 
 group :test do
@@ -108,3 +110,4 @@ gem 'acts_as_list', '~> 1.0', '>= 1.0.3'
 gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
+

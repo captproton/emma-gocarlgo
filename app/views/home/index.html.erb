@@ -285,7 +285,9 @@ $(document).ready(function(){
                 <div id="gform_widget-2" class="gform_widget">
                 <div class="gf_browser_chrome gform_wrapper" id="gform_wrapper_1"><div id="gf_1" class="gform_anchor" tabindex="-1"></div>
                   <%# contact form here %>
-                  <%= render '/shared/lead_form', lead: @lead %>
+                  <%# lead_form is for hubspot %>
+                  <%#= render '/shared/lead_form', lead: @lead %>
+                  <%= render '/shared/contact_message_form', contact_message: @contact_message_form %>
                 </div>
               </div>            
       <!-- FINISH INNER-->

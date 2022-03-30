@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_24_184319) do
+ActiveRecord::Schema.define(version: 2022_03_29_171459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -207,6 +207,17 @@ ActiveRecord::Schema.define(version: 2021_07_24_184319) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "broadcaster_theme_id", null: false
     t.index ["broadcaster_theme_id"], name: "index_broadcaster_videos_on_broadcaster_theme_id"
+  end
+
+  create_table "contact_messages", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.text "email"
+    t.string "phone_number"
+    t.string "subject"
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "first_time_entries", force: :cascade do |t|
@@ -497,6 +508,7 @@ ActiveRecord::Schema.define(version: 2021_07_24_184319) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.boolean "contact_message_receiver", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

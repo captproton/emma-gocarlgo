@@ -1,0 +1,30 @@
+<div class="page-header">
+  <%= link_to contact_messages_path, class: 'btn btn-default' do %>
+    All Contact_messages
+  <% end %>
+  <%= link_to edit_contact_message_path(@contact_message), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show contact_message</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>First name:</dt>
+  <dd><%= @contact_message.first_name %></dd>
+
+  <dt>Last name:</dt>
+  <dd><%= @contact_message.last_name %></dd>
+
+  <dt>Email:</dt>
+  <dd><%= @contact_message.email %></dd>
+
+  <dt>Phone number:</dt>
+  <dd><%= @contact_message.phone_number %></dd>
+
+  <dt>Subject:</dt>
+  <dd><%= @contact_message.subject %></dd>
+
+  <dt>Message:</dt>
+  <dd><%= @contact_message.message %></dd>
+
+</dl>
