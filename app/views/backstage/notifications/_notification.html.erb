@@ -1,9 +1,10 @@
 <div class="p-4"style="background-color: #666; margin: 5px;">
+    <% contact_message =  notification.to_notification.message_details %>      
+    <%= contact_message.first_name %> <br>
+    <%= contact_message.last_name %> <br>
+    <%= contact_message.email %> <br>
+    <%= contact_message.phone_number %> <br>
     <%= link_to notification.to_notification.message,  notification.to_notification.url %>
-    <% contact_message =  notification.to_notification.params.fetch(:contact_message) %>      
-    <% if contact_message.present? %>
-        <%= "cm: #{contact_message}" %> <br />
-    <% end %>
 
 </div>
 

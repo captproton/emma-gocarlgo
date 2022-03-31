@@ -34,10 +34,30 @@ class ContactFormNotification < Noticed::Base
   
   def url
     root_path
-    contact_messages
+  end
+
+  def message_subject
+    cm = self._get_contact_message
+    cm.subject
+  end
+
+  def message_details
+    # cm = self._get_default_contact_message
+    cm = self.params.fetch(:contact_message, self._get_default_contact_message)
   end
 
   def self.contact_message_team
     User.contact_message_team
+  end
+
+  def _get_default_contact_message
+    ContactMessage.new(id: 0, 
+      first_name: "", 
+      last_name: "", 
+      email: "", 
+      phone_number: "", 
+      subject: "default subject", 
+      message: "", 
+      created_at: Time.now)
   end
 end
