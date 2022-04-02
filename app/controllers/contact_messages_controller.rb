@@ -14,7 +14,6 @@ class ContactMessagesController < ApplicationController
 
     respond_to do |format|
       if @contact_message.save
-        _notify_receipt_of_message(@contact_message)
         format.html { redirect_to contact_messages_url, notice: "Your message was successfully sent." }
         format.json { render :show, status: :created, location: @contact_message }
       else
@@ -22,11 +21,6 @@ class ContactMessagesController < ApplicationController
         format.json { render json: @contact_message.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def  _notify_receipt_of_message(contact_message)
-    # contact_message details are delivered via ContactFormNotification
-    # ex: ContactFormNotification.with({contact_message: contact_message}).deliver(User.last)
   end
 
   private

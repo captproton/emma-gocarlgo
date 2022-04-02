@@ -7,7 +7,7 @@ class ContactFormNotification < Noticed::Base
   # Add your delivery methods
   #
   deliver_by :database, format: :to_database
-  deliver_by :email, mailer: "ContactMailer", method: :send_contact_message
+  deliver_by :email, mailer: "ContactMailer", method: :notify_team_of_contact_message
   # deliver_by :slack
   # deliver_by :custom, class: "MyDeliveryMethod"
 
@@ -36,12 +36,12 @@ class ContactFormNotification < Noticed::Base
     root_path
   end
 
-  def message_subject
+  def self.message_subject
     cm = self._get_contact_message
     cm.subject
   end
 
-  def message_details
+  def self.message_details
     # cm = self._get_default_contact_message
     cm = self.params.fetch(:contact_message, self._get_default_contact_message)
   end
